@@ -25,7 +25,7 @@
 
 constexpr int TEST_MODE = 0;							///< Set it equal to 1 to enter test mode, otherwise set it to 0 
 constexpr int NUM_THR = 12;								///< Set it to the Number of threads
-constexpr int CHUNK_SIZE = (int) (1000/NUM_THR) + 1;	///< Set it to the \ceil{\frac{Nv}{NUM_THR}}
+constexpr int CHUNK_SIZE = (int)(1000 / NUM_THR) + 1;	///< Set it to the \ceil{\frac{Nv}{NUM_THR}}
 constexpr int VERBOSITY = 3;							///< Sets K-means' iterface verbosity level
 constexpr int MAX_LIMIT = TEST_MODE == 1 ? 1023 : 63;	///< Upper bound used in the randomly generated dataset of reals
 constexpr int N = TEST_MODE == 1 ? 50 : 100000;			///< Elements in our dataset
