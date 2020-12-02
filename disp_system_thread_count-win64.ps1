@@ -1,0 +1,1 @@
+Get-WmiObject -class win32_processor -Property "NumberOfLogicalProcessors" | Select-Object -Property "NumberOfLogicalProcessors"
