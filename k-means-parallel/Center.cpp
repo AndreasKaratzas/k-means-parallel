@@ -16,12 +16,12 @@ void init_centers(std::vector<std::array<float, Nv>>& old_Center)
 	std::uniform_real_distribution<float> dist_Center(0.0, MAX_LIMIT + 0.0); ///< Generates a uniform distribution bounded by the `MAX_LIMIT` set in `Common.h` to prevent number overflow
 	for (int i = 0; i < Nc; i += 1)
 	{
-		std::array<float, Nv> Elements;                                        ///< Declares a vector `Elements` that temporarily holds the vector that is to be inserted to `old_Center`
+		std::array<float, Nv> Elements;                                  ///< Declares a vector `Elements` that temporarily holds the vector that is to be inserted to `old_Center`
 #pragma omp simd
 		for (int j = 0; j < Nv; j += 1)
 		{
-			Elements[j] = dist_Center(mt_Center);                                ///< Updates contents of `Elements`
+			Elements[j] = dist_Center(mt_Center);                    ///< Updates contents of `Elements`
 		}
-		old_Center.emplace_back(Elements);                                     ///< Moves `Elements` to `old_Center`
+		old_Center.emplace_back(Elements);                               ///< Moves `Elements` to `old_Center`
 	}
 }
