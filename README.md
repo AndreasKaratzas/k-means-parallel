@@ -1,5 +1,12 @@
 # K-Means in Parallel
+
+![Demo](kmeans.gif)
+
+## Description
+
 This is an implementation of the well known clustering algorithm K-Means. The implementation was done in `C++ 17` using `OpenMP 4.0`. The IDE used for the project was `Visual Studio 2019` and the compiler was `Intel Compiler 19.1`. The *Effective Logical Core Utiliation* percentage was 96.1 %. 
+
+## Installation
 
 To test the code in Linux, execute the commands:
  1. **git clone** *https://github.com/andreasceid/k-means-parallel.git*
@@ -12,16 +19,22 @@ To test the code in Linux, execute the commands:
  6. **make**
  7. **./kmeans**
 
+## Core Utilization
+
+The Intel VTune Profiler Performance Snapshot results were:
+
 ![Effective Logical Core Utilization Percentage](performance.PNG "Effective Logical Core Utilization Percentage")
 
-There are 2 scritps that detect system logical core number:
-  * For Linux (Tested on Ubuntu 20.04 64 bit): Bash Script `disp_system_thread_count-ubu20.sh`
-  * For Windows (Tested on Windows 10 Version 20H2 64 bit): Powershell Script `disp_system_thread_count-win64.ps1`
-  
+## Scaling
+
 The program was also tested with different number of available threads, and the scaling is pictured below.
 
 ![Thread Parallelism Convergence](convergence.png "Thread Parallelism Convergence")
 
-There is a [PDF project report](parallel-programming-lab-2.pdf) in Greek.
+## Additional Content
 
-![Demo](kmeans.gif)
+There are 2 scritps that detect system logical core number:
+  * For Linux (Tested on Ubuntu 20.04 64 bit): Bash Script `disp_system_thread_count-ubu20.sh`
+  * For Windows (Tested on Windows 10 Version 20H2 64 bit): Powershell Script `disp_system_thread_count-win64.ps1`
+ 
+ There is a [PDF project report](parallel-programming-lab-2.pdf) in Greek.
