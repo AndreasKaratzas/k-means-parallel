@@ -67,13 +67,13 @@ void track_kmeans_progress(int iter_counter, long double norm_iter_conv)
  */
 void export_kmeans_progress(std::string filename)
 {
-	std::ofstream export_stream;                                                            ///< Defines an output file stream
-	export_stream.open("./data/" + filename + ".txt");                                      ///< Associates `export_stream` with a CSV file named after the `filename` variable
-	for (int i = 0; i < kmeans_progress.size(); i += 1)                                     ///< Loops through `kmeans_progress`
+	std::ofstream export_stream;                                                           ///< Defines an output file stream
+	export_stream.open("./data/" + filename + ".txt");                                     ///< Associates `export_stream` with a CSV file named after the `filename` variable
+	for (int i = 0; i < kmeans_progress.size(); i += 1)                                    ///< Loops through `kmeans_progress`
 	{
 		export_stream <<
 			"Iteration: " << kmeans_progress.at(i).first <<
-			"Convergence: " << kmeans_progress.at(i).second << std::endl;           ///< Exports an element of `kmeans_progress` vector to the `export_stream` file stream
+			"Convergence: " << kmeans_progress.at(i).second << std::endl;          ///< Exports an element of `kmeans_progress` vector to the `export_stream` file stream
 	}
-	export_stream.close();                                                                  ///< Closes file stream
+	export_stream.close();                                                                 ///< Closes file stream
 }
