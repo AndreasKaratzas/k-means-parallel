@@ -2,7 +2,7 @@
 This is an implementation of the well known clustering algorithm K-Means. The implementation was done in `C++ 17` using `OpenMP 4.0`. The IDE used for the project was `Visual Studio 2019` and the compiler was `Intel Compiler 19.1`. The *Effective Logical Core Utiliation* percentage was 96.1 %. 
 
 To test the code in Linux, execute the commands:
- 1. **git** *clone https://github.com/andreasceid/k-means-parallel.git*
+ 1. **git clone** *https://github.com/andreasceid/k-means-parallel.git*
  2. **cd** *k-means-parallel*
  3. **chmod u+x** *disp_system_thread_count-ubu20.sh*
  4. **./disp_system_thread_count-ubu20.sh**
