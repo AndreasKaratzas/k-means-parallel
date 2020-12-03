@@ -13,12 +13,12 @@ long double eucl_diff(const std::array<float, Nv>& A, const std::array<float, Nv
 {
 	long double eucl_diff = 0;
 #pragma omp parallel for simd num_threads(NUM_THR) reduction(+: eucl_diff) schedule(dynamic, CHUNK_SIZE)
-	for (int i = 0; i < Nv; i += 1)                                            ///< Loops through all `Nv` elements of the given arrays
+	for (int i = 0; i < Nv; i += 1)                                                  ///< Loops through all `Nv` elements of the given arrays
 	{
 		long double point_diff = A[i] - B[i];                                    ///< Computes element-wise difference
 		if (point_diff > std::numeric_limits<float>::max())                      ///< Checks for data overflow
 		{
-			point_diff = std::numeric_limits<float>::max();                        ///< Prevents data overflow
+			point_diff = std::numeric_limits<float>::max();                  ///< Prevents data overflow
 		}
 		long double point_diff_squared = point_diff * point_diff;                ///< Squares difference
 		eucl_diff += point_diff_squared;                                         ///< Adds difference to `eucl_diff`
@@ -39,14 +39,14 @@ long double eucl_diff(const std::array<float, Nv>& A, const std::array<float, Nv
  */
 long double convergence(const std::vector<std::array<float, Nv>>& curr_Center, const std::vector<std::array<float, Nv>>& prev_Center)
 {
-	long double convergence_sum = 0;                                           ///< Initializes `convergence_sum` variable used to store the total additive difference between `curr_Center` and `prev_Center`
-	for (int i = 0; i < Nc; i += 1)                                            ///< Loops through all centers
+	long double convergence_sum = 0;                                                 ///< Initializes `convergence_sum` variable used to store the total additive difference between `curr_Center` and `prev_Center`
+	for (int i = 0; i < Nc; i += 1)                                                  ///< Loops through all centers
 	{
 		long double tmp_eucl_d = eucl_diff(curr_Center.at(i), prev_Center.at(i));///< Computes element-wise Euclidean distance
 		convergence_sum += tmp_eucl_d > 1.0 ? tmp_eucl_d : 0.0;                  ///< Optimizes Convergence if error is close to defined threshold
 		if (convergence_sum > std::numeric_limits<double>::max())                ///< Checks for number overflow
 		{
-			convergence_sum = std::numeric_limits<double>::max();                  ///< Prevents number overflow
+			convergence_sum = std::numeric_limits<double>::max();            ///< Prevents number overflow
 		}
 	}
 	return convergence_sum;
