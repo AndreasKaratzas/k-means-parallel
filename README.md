@@ -2,15 +2,15 @@
 This is an implementation of the well known clustering algorithm K-Means. The implementation was done in `C++ 17` using `OpenMP 4.0`. The IDE used for the project was `Visual Studio 2019` and the compiler was `Intel Compiler 19.1`. The *Effective Logical Core Utiliation* percentage was 96.1 %. 
 
 To test the code in Linux, execute the commands:
- 1. git clone https://github.com/andreasceid/k-means-parallel.git
- 2. cd k-means-parallel
- 3. chmod u+x disp_system_thread_count-ubu20.sh
- 4. ./disp_system_thread_count-ubu20.sh
+ 1. ***git*** *clone https://github.com/andreasceid/k-means-parallel.git*
+ 2. ***cd*** *k-means-parallel*
+ 3. ***chmod u+x*** *disp_system_thread_count-ubu20.sh*
+ 4. ***./disp_system_thread_count-ubu20.sh***
    > Write down the number on the output. We will use it later
- 5. cd k-means-parallel
+ 5. ***cd*** *k-means-parallel*
    > Edit `Common.h`, at line 27, and set variable `NUM_THR` equal to the number we noted in step 5
- 6. make
- 7. ./kmeans
+ 6. ***make***
+ 7. ***./kmeans***
 
 ![Effective Logical Core Utilization Percentage](performance.PNG "Effective Logical Core Utilization Percentage")
 
