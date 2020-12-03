@@ -22,7 +22,7 @@ void compute_classes(const std::vector<std::array<float, Nv>>& Vec, const std::v
 	}
 	int argmin_idx = -1;                                                                ///< Initializes \argmin index
 	long double argmin_val = std::numeric_limits<long int>::max() + 0.0;                ///< Initializes \argmin value
-#pragma omp parallel for simd num_threads(NUM_THR) firstprivate(argmin_idx, argmin_val) schedule(dynamic, 1000) 
+#pragma omp parallel for num_threads(NUM_THR) firstprivate(argmin_idx, argmin_val) schedule(dynamic, 1000) 
 	for (int i = 0; i < N; i += 1)                                                      ///< Loop through `Vec`
 	{
 		for (int j = 0; j < Nc; j += 1)                                             ///< Loop through `old_Center`
